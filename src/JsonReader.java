@@ -15,8 +15,6 @@ import org.json.simple.parser.ParseException;
 
 public class JsonReader {
 
-    public static int i=0;
-
     public static void main(String[] args) {
         jsonObjectExtractor(jsonFileReader());
     }
@@ -40,11 +38,10 @@ public class JsonReader {
     }
 
     public static void jsonObjectExtractor(JSONObject objToBeParsedFromFile) {
-        JSONObject questionNumber;
 
-        do{
-        i++;
-        String questionNumberIndex = "question number ".concat(Integer.toString(i));
+        JSONObject questionNumber = null;
+        for(int i=0;i<objToBeParsedFromFile.size();i++){
+        String questionNumberIndex = "question number ".concat(Integer.toString(i+1));
 
         questionNumber = (JSONObject) objToBeParsedFromFile.get(questionNumberIndex);
         System.out.println(questionNumber);
@@ -57,7 +54,7 @@ public class JsonReader {
         System.out.println(readQuestionText(questionNumber));
         System.out.println(readAnswerText(questionNumber));
         }
-        while(!questionNumber.equals("null"));
+
     }
     public static ArrayList readAnswerText(JSONObject obj) {
         JSONArray answerTextJsonArray = (JSONArray) obj.get("answerText");
