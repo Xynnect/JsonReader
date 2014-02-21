@@ -1,10 +1,12 @@
 /**
  * Created by Xelnect on 2/19/14.
  */
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,46 +14,20 @@ import org.json.simple.parser.ParseException;
 
 public class JsonReader {
 
+    public static int i=0;
+
     public static void main(String[] args) {
-
-       // String questionType1 = "radio button";
-       // String questionText1 = "do you have some problems with your hearth?";
-       // String[] answerText1 = {"yes", "no"};
-
-       // String questionType2 = "check boxes";
-       // String questionText2 = "which memebers of your family have heart problems?";
-       // String[] answerText2 = {"your mother", "your father", "your uncle", "your aunt"};
-
-        jsonFileReader();
-
-
-
+        jsonObjectExtractor(jsonFileReader());
     }
 
-    public static void jsonFileReader(){
+    public static JSONObject jsonFileReader() {
         JSONParser parser = new JSONParser();
+        Object objToBeParsedFromFile = null;
+        JSONObject jsonObjectFromObj = null;
 
         try {
-
-            Object obj = parser.parse(new FileReader("C:\\Users\\Xelnect\\Desktop\\JSonWritten.json"));
-
-            //JSONObject jsonObject = (JSONObject) obj;
-
-            //String name = (String) jsonObject.get("name");
-            //System.out.println(name);
-
-            //long age = (Long) jsonObject.get("age");
-            //System.out.println(age);
-
-            // loop array
-            //JSONArray msg = (JSONArray) jsonObject.get("messages");
-            //Iterator<String> iterator = msg.iterator();
-            //while (iterator.hasNext()) {
-            //    System.out.println(iterator.next());
-            //}
-
-            System.out.print(obj.toString());
-
+            objToBeParsedFromFile = parser.parse(new FileReader("C:\\Users\\Xelnect\\Desktop\\JSonWritten.json"));
+            jsonObjectFromObj = (JSONObject) objToBeParsedFromFile;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -59,8 +35,15 @@ public class JsonReader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return jsonObjectFromObj;
     }
-    public static void jsonObjectExtractor(){
+
+    public static void jsonObjectExtractor(JSONObject objToBeParsedFromFile) {
+        i++;
+        String questionNumberIndex = "question number ".concat(Integer.toString(i));
+        
+        JSONObject questionNumber = (JSONObject) objToBeParsedFromFile.get(questionNumberIndex);
+        System.out.println(questionNumber);
 
     }
 
