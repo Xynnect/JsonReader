@@ -41,6 +41,7 @@ public class JsonReader {
 
     public static void jsonObjectExtractor(JSONObject objToBeParsedFromFile) {
         JSONObject questionNumber;
+
         do{
         i++;
         String questionNumberIndex = "question number ".concat(Integer.toString(i));
