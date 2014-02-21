@@ -67,7 +67,7 @@
       <file leaf-file-name="JsonReader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JsonReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="39" selection-start="2279" selection-end="2279" vertical-scroll-proportion="0.8865478" vertical-offset="592" max-vertical-offset="1360">
+            <state line="71" column="28" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.6693679" vertical-offset="794" max-vertical-offset="1411">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -414,7 +414,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="39" selection-start="2279" selection-end="2279" vertical-scroll-proportion="0.8865478" vertical-offset="592" max-vertical-offset="1360">
+        <state line="71" column="28" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.6693679" vertical-offset="794" max-vertical-offset="1411">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

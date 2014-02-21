@@ -40,10 +40,12 @@ public class JsonReader {
     }
 
     public static void jsonObjectExtractor(JSONObject objToBeParsedFromFile) {
+        JSONObject questionNumber;
+        do{
         i++;
         String questionNumberIndex = "question number ".concat(Integer.toString(i));
 
-        JSONObject questionNumber = (JSONObject) objToBeParsedFromFile.get(questionNumberIndex);
+        questionNumber = (JSONObject) objToBeParsedFromFile.get(questionNumberIndex);
         System.out.println(questionNumber);
 
         readQuestionType(questionNumber);
@@ -53,7 +55,8 @@ public class JsonReader {
         System.out.println( readQuestionType(questionNumber));
         System.out.println(readQuestionText(questionNumber));
         System.out.println(readAnswerText(questionNumber));
-
+        }
+        while(!questionNumber.equals("null"));
     }
     public static ArrayList readAnswerText(JSONObject obj) {
         JSONArray answerTextJsonArray = (JSONArray) obj.get("answerText");
